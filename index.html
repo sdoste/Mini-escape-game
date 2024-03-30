@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <div class="container">
+         <div id="playArea">
+            <div id="buttonContainer">
+                <button id="startButton" onclick="startNewGame()">Start game</button>
+            </div>
+            <div class="clickable" id="door" onclick="salir()"></div>
+            <div class="clickable" id="esquinaCuadro" onclick="despegar()"></div>
+            <div class="clickable drawer" id="topDrawer" onclick="cajonArriba()"></div>
+            <div class="clickable drawer" id="middleDrawer" onclick="cajonMedio()"></div>
+            <div class="clickable drawer" id="bottomDrawer" onclick="cajonAbajo()"></div>
+            <div class="clickable" id="pc" onclick="portatil()"></div>
+            <div class="clickable" id="phone" onclick="telefono()"></div>
+            <div class="clickable" id="printer" onclick="impresora()"></div>        
+        </div>
+        <div id="inventory">
+            <div class="item" id="item1" onclick="usarObjeto(1)"></div>
+            <div class="item" id="item2" onclick="usarObjeto(2)"></div>
+            <div class="item" id="item3" onclick="usarObjeto(3)"></div>
+            <div class="item" id="item4" onclick="usarObjeto(4)"></div>
+            <div class="item" id="item5" onclick="usarObjeto(5)"></div>
+            <div class="item" id="item6" onclick="usarObjeto(6)"></div>
+            <div class="item" id="item7" onclick="usarObjeto(7)"></div>
+            <div id="left" onclick ="left()"><</div>
+            <div id="right" onclick ="right()">></div> 
+        </div>
+        <div class="clickable" id="menu">
+            <div class="clickable" id="exitMenu" onclick="closeMenu()"></div>
+            <div class="clickable" id="simon">
+                <div class="clickable simonButton" id="green" onmousedown="clickGreen()"></div>
+                <div class="clickable simonButton" id="red" onmousedown="clickRed()"></div>
+                <div class="clickable simonButton" id="yellow" onmousedown="clickYellow()"></div>
+                <div class="clickable simonButton" id="blue" onmousedown="clickBlue()"></div>
+            </div>    
+        </div> 
+    </div>
+    
+   
+    <script src="main.js"></script>
+</body>
+</html>

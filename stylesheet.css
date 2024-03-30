@@ -1,0 +1,282 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+ /* //button  */
+#startButton {
+    position: relative;
+    top: 278px;
+    left: 339px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 213px;
+    height: 45px;
+    background: #FF4742;
+    border: 1px solid #FF4742;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 16px;
+    min-height: 40px;
+    outline: 0;
+    padding: 12px 14px;
+
+}
+
+#startButton:hover,
+#startButton:active {
+    background-color: initial;
+    background-position: 0 0;
+    color: #FF4742;
+}
+
+#container{
+    width: 900px;
+    margin: auto;
+}
+
+#playArea{
+    width: 900px;
+    height: 625px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: solid;
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+}
+
+#inventory{
+    display: none;
+    width: 900px;
+    height: 120px;
+     
+    border: solid;
+    border-color: darkblue;
+    border-radius: 0px 0px 8px 8px;
+
+    position: relative;
+    bottom: 125px;
+    margin: auto; 
+
+}
+/* ARROWS */
+#left{
+    cursor: pointer;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 170px;
+    font-weight: bold;
+    color: white;
+    position: relative;
+    bottom: 470px;
+}
+
+#right{
+    cursor: pointer;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 170px;
+    font-weight: bold;
+    color: white;
+    position: relative;
+    bottom: 470px;
+    left: 665px;
+}
+
+.item {
+    border: solid;
+    margin: 20px;
+    grid-row: 1;
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    background-size: cover !important;
+}
+
+/* OBJETOS INTERACCIONABLES*/
+#door{
+    display: none;
+    cursor: pointer;
+    flex-shrink: 0;
+    width: 148px;
+    height: 300px;
+    /* background-color: orange; */
+    position: relative;
+    left: 522px;
+    top: 89px;
+}
+
+#esquinaCuadro{
+    display: none;
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    /* background-color: orange; */
+    position: relative;
+    left: 617px;
+    top: 40px;
+}
+/* ESCRITORIO */
+#topDrawer{
+    display: none;
+    cursor: pointer;
+    width: 121px;
+    height: 30px;
+    background-color: orange;
+    position: relative;
+    left: 232px;
+    top: 328px;
+}
+#middleDrawer{
+    display: none;
+    cursor: pointer;
+    width: 121px;
+    height: 30px;
+    background-color: orange;
+    position: relative;
+    left: 232px;
+    top: 331px;
+}
+
+  #bottomDrawer{
+    display: none;
+    cursor: pointer;
+    width: 120px;
+    height: 60px;
+    background-color: orange;
+    position: relative;
+    top: 334px;
+    left: 233px;
+  }
+
+  #pc{
+    display: none;
+    cursor: pointer;
+    border-radius: 0px 80px 0px 50px;
+    width: 118px;
+    height: 63px;
+    background-color: orange;
+    position: relative;
+    top: 132px;
+    left: 297px;
+  }
+  #phone{
+    display: none;
+    cursor: pointer;
+    width: 68px;
+    height: 29px;
+    background-color: orange;
+    position: relative;
+    left: 527px;
+    top: 104px;
+  }
+  #printer{
+    display: none;
+    cursor: pointer;
+    width: 124px;
+    height: 71px;
+    background-color: orange;
+    position: relative;
+    left: 518px;
+    top: 170px;
+  }
+
+
+  #menu{
+    display: none;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    width: 564px;
+    height: 410px;
+    border-radius: 30px;
+    background-color: rgb(238, 222, 201);
+    position: relative;
+    left: 1px;
+    bottom: 702px;
+  }
+
+  #exitMenu{
+    display: none;
+    background-image: url("Images/redCross.png");
+    background-size: cover;
+    cursor: pointer;
+    width: 34px;
+    height: 34px;
+    background-color: rgb(201, 231, 238);
+    position: relative;
+    left: 512px;
+    top: 17px;
+  }
+
+  #simon{
+    display: none;
+    background-image: url(Images/playSimon.png);
+    background-size: cover;
+    width: 299px;
+    height: 224px;
+    position: relative;
+    left: 136px;
+    top: 51px;
+  }
+
+  #red{
+    display: none;
+    cursor: pointer;
+    width: 112px;
+    height: 63px;
+    /* background-color: red; */
+    position: relative;
+    left: 29px;
+    bottom: 41px;
+    border-radius: 300px 0px 200px 0px;
+  }
+
+  #green{
+    display: none;
+    cursor: pointer;
+    width: 121px;
+    height: 63px;
+    /* background-color: green; */
+    position: relative;
+    left: 140px;
+    top: 21px;
+    border-radius: 0px 300px 0px 200px;
+  }
+  
+  #blue{
+    display: none;
+    cursor: pointer;
+    width: 112px;
+    height: 97px;
+    /* background-color: blue; */
+    position: relative;
+    left: 25px;
+    bottom: 135px;
+    border-radius: 0px 120px 0px 200px;
+  }
+
+  #yellow{
+    display: none;
+    cursor: pointer;
+    width: 116px;
+    height: 102px;
+    /* background-color: yellow; */
+    position: relative;
+    left: 143px;
+    bottom: 34px;
+    border-radius: 550px 0px 800px 0px;
+  }
+
