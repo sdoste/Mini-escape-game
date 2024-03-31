@@ -3,7 +3,7 @@ function startNewGame(){
     //esconde botón, muestra inventario y carga fondo y clickables
     document.getElementById("buttonContainer").innerHTML = "";
     document.getElementById("inventory").style.display = "grid";
-    loadAssets()
+    loadAssets();
 }
 
 //posición de las 4 paredes
@@ -13,7 +13,7 @@ function left(){
     if (counter == 0){
         counter = 3
     } else {
-        counter--
+        counter--;
     }
     loadAssets();
 }
@@ -22,7 +22,7 @@ function right(){
     if (counter == 3){
         counter = 0
     } else {
-        counter++
+        counter++;
     }
     loadAssets();
 }
@@ -38,11 +38,10 @@ function loadAssets(){
     }
      switch (counter) {
         case 0:
-            playArea.style.backgroundImage = "url(Images/door_wall.jpg)";
-            document.getElementById("door").style.display = "block";
+            displayDoorAndMailbox();
             break;
         case 1:
-            playArea.style.backgroundImage = "url(Images/emptywall.png)";
+            displayClockAndProjection();
             break;
         case 2:
             displayDesk();
@@ -54,9 +53,30 @@ function loadAssets(){
        
 }
 
-//FUNCIONES PARA DISPLAY
+////////////////////////////////////
+//       FUNCIONES DISPLAY        //
+////////////////////////////////////
 
-//Pared cuadro
+//PARED PUERTA Y BUZÓN
+let mailLidOpen = false;
+function displayDoorAndMailbox(){
+    if (mailLidOpen){
+        playArea.style.backgroundImage = "url(Images/door_wall.jpg)";
+        document.getElementById("door").style.display = "block";
+        document.getElementById("mailbox").style.display = "block";
+        document.getElementById("mailbox").style.backgroundImage = "url(Image/mailboxOpenWithKey.png)";
+    } else{
+        document.getElementById("mailbox").style.display = "block";
+    }
+    playArea.style.backgroundImage = "url(Images/door_wall.jpg)";
+    document.getElementById("door").style.display = "block";
+    // document.getElementById("mailbox").style.display = "block";
+    // document.getElementById("lid").style.display = "block";
+    // document.getElementById("box").style.display = "block";
+
+}
+//PARED CUADRO
+let cuadroPuesto = true;
 function displayPaintingOrMirror(){
     if (cuadroPuesto){
         playArea.style.backgroundImage = "url(Images/PaintingWall.jpg)";
@@ -70,7 +90,7 @@ function displayPaintingOrMirror(){
         }
     }
 }
-//Pared Desk
+//PARED ESCRITORIO
 let pcNotUsed = true;
 let phoneNotUsed = true;
 let printerNotUsed = true;
@@ -86,6 +106,19 @@ function displayDesk(){
     if (phoneNotUsed) document.getElementById("phone").style.display = "block";
     if (printerNotUsed) document.getElementById("printer").style.display = "block";
 }
+//PARED RELOJ PROYECCION
+let projectorPlaced = false;
+let clockHands = "normal";
+function displayClockAndProjection(){
+    playArea.style.backgroundImage = "url(Images/clockWall.png)";
+    let clock = document.getElementById("clock");
+    let pedestal = document.getElementById("pedestal");
+    //Reloj
+    clock.style.display = "block"
+    //Pedestal
+    pedestal.style.display = "block";
+    document.getElementById("placedProjector").style.display = "block";
+}
 
 ////////////////////////////////////
 //             PUERTA             //
@@ -97,6 +130,13 @@ function salir(){
         window.alert("¡Enhorabuena! ¡Has salido de la habitación!")
     } else {
         alert("Está cerrada con llave.")
+    }
+}
+function buzon(){
+    if (mailLidOpen){
+        window.alert("El buzón está abierto. Coges la llave que hay en su interior.")
+    } else {
+        window.alert("El buzón está cerrado. Parece que se abre a distancia.");
     }
 }
 
@@ -118,26 +158,15 @@ function despegar(){
 ////////////////////////////////////
 //de un solo uso, if true -> display block, if false, clickable div is not displayed.
 
-
-function despegar(){
-    let userResponse = confirm("Una esquina parece estar despegada. ¿Quieres estirar de ella?");
-    if (userResponse){
-        cuadroPuesto = false;
-        playArea.style.backgroundImage = "url(Images/MirrorWall.JPG)"
-        window.alert("Retiras el papel del cuadro. Debajo hay un espejo.");
-    } else {
-        window.alert("El cuadro te parece muy bonito y decides no quitarlo. Tu sabrás.")
-    }
-}
-
 let hasProyector = false;
 let hasNote = false;
 function cajonArriba(){
-    if (hasNote){
+    if (hasProyector){
         window.alert("Esta vacío");
     } else {
         if (hasSmallKey){
-            window.alert("Abres el cajón con la llave pequeña. Dentro, encuentras una nota que dice: hackerman123");
+            //quitarbackgroundkey
+            window.alert("Abres el cajón con la llave pequeña. Dentro, encuentras un mini proyector portátil.");
          
         } else {
             window.alert("Está cerrado con llave.")
@@ -146,11 +175,13 @@ function cajonArriba(){
       
 }
 function cajonMedio(){
-    if (hasSmallKey){
-        window.alert("Está vacío.")
+    if (impresoraConectada){
+        window.alert("Ya has utilizado este código para encender el ordenador.")
     } else {
-        window.alert("Encuentras una llave.");
-        hasSmallKey = true;
+        let userConfirms = confirm("Hay un código QR grabado en el cajón. ¿Quieres escanearlo?");
+        if (userConfirms){
+            window.open("https://mywordle.strivemath.com/?word=yfzqri&lang=es"); 
+        }
     }
 }
 
@@ -162,15 +193,15 @@ function cajonAbajo(){
         window.alert("Encuentras un juego de Simon.");
         itemCounter++;
         let newItem = document.getElementById("item" + itemCounter);
-        newItem.style.background = "url(Images/simon.png)";
+        newItem.style.background = "url(Images/playSimon.png)";
         newItem.style.cursor = "pointer";
         hasSimon = true;
     }
 }
-let contraseña = "hackerman123"
+let contraseña = "cringe"
 function portatil(){
     if (pcNotUsed) {
-        userTry = prompt("Introduzca la contraseña para conectar con la impresora:");
+        let userTry = prompt("Introduzca la contraseña para conectar con la impresora:");
         if (userTry == contraseña){
             //contraseña correcta
             pcNotUsed = false;
@@ -179,37 +210,60 @@ function portatil(){
         } else {
             window.alert("Contraseña incorrecta");
         }
-    }0
+    } else {
+        window.alert ("No ves nada más que hacer con el portátil.")
+    }
+}
+
+let impresoraConectada = false;
+function impresora(){
+    if (impresoraConectada){
+        if (hasPage){
+            window.alert("No crees que la impresora vaya a servir de mucho más...")
+        } else{
+            window.alert("Ha imprimido una página. La coges.");
+            hasPage = true;
+            itemCounter++;
+            let newItem = document.getElementById("item" + itemCounter);
+            newItem.style.background = "url(Images/printedPage.gif)";
+            newItem.style.cursor = "pointer"; 
+        }
+
+    } else (
+        window.alert("Está encendida.")
+    )
+
 }
 
 function telefono(){
     window.alert("Mostrar teclas");
 
 }
-let impresoraConectada = false;
-function impresora(){
-    window.alert("Luego lo abro.");
-
-}
 
 //objects
+//
 let itemCounter = 0;
-let cuadroPuesto = true;
 let hasKey = false;
 let hasSmallKey = false;
+let hasPage = false;
 let proyectorOn = false;
 
-currentItem = ""
+let currentItem = ""
 function usarObjeto(itemNumber){
    let itemBackground = document.getElementById("item" + itemNumber).style.backgroundImage;
-   console.log(itemBackground);
+   console.log(itemNumber);
    switch (itemBackground){
-    case 'url("Images/simon.png")':
+    case 'url("Images/playSimon.png")':
         document.getElementById("menu").style.display = "block";
         document.getElementById("exitMenu").style.display = "block";
         document.getElementById("simon").style.display = "block";
-        itemNumber = currentItem;
+        currentItem = itemNumber;
         playSimon();
+        break;
+    case 'url("Images/printedPage.gif")':
+        document.getElementById("menu").style.display = "block";
+        document.getElementById("exitMenu").style.display = "block";
+        document.getElementById("page").style.display = "block";
         break;
    }
 }
@@ -248,18 +302,23 @@ function playSimon(){
 function simonSolve(){
     setTimeout(() => {  document.getElementById("simon").style.backgroundImage = "url(Images/playSimon.png)"; }, 500);
     //comprobación solución a cada click
-    simonSolution = "redyellowredgreenredyellowredbluegreenblue"
-    console.log(secretSimon);
+    // simonSolution = "redyellowredgreenredyellowredbluegreenblue"
+    simonSolution ="redgreenblueyellow";
     if (secretSimon == simonSolution){
         window.alert("Suena una melodía y se abre un compartimento en el Simon. Encuentras un par de pilas.")
-        document.getElementById("item" + itemNumber).style.backgroundImage = "";
-        document.getElementById("item" + itemNumber).style.cursor = "auto";
+        console.log("whats the itemnumber here");
+        document.getElementById("item" + currentItem).style.backgroundImage = "";
+        document.getElementById("item" + currentItem).style.cursor = "auto";
+        closeMenu();
     }
 }
 
 function closeMenu(){
     document.getElementById("menu").style.display = "none";
     document.getElementById("exitMenu").style.display = "none";
+    //closing items
+    document.getElementById("simon").style.display = "none";
+    document.getElementById("page").style.display = "none";
     secretSimon = "";
 } 
 

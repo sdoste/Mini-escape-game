@@ -13,7 +13,16 @@
                 <button id="startButton" onclick="startNewGame()">Start game</button>
             </div>
             <div class="clickable" id="door" onclick="salir()"></div>
+            <div class="clickable" id="mailbox" onclick="buzon()">
+                <div class="clickable" id="lid"></div>
+                <div id="clickable" id="box"></div>
+                <div id="clickable" id="smallKey"></div>
+            </div>
             <div class="clickable" id="esquinaCuadro" onclick="despegar()"></div>
+            <div class="clickable" id="clock" onclick="reloj()"></div>
+            <div class="clickable" id="pedestal" onclick="pedestal()">
+                <div class="clickable" id="placedProjector" onclick="placeProjector()"></div>
+            </div>
             <div class="clickable drawer" id="topDrawer" onclick="cajonArriba()"></div>
             <div class="clickable drawer" id="middleDrawer" onclick="cajonMedio()"></div>
             <div class="clickable drawer" id="bottomDrawer" onclick="cajonAbajo()"></div>
@@ -34,6 +43,7 @@
         </div>
         <div class="clickable" id="menu">
             <div class="clickable" id="exitMenu" onclick="closeMenu()"></div>
+            <div class="clickable" id="page"></div>
             <div class="clickable" id="simon">
                 <div class="clickable simonButton" id="green" onmousedown="clickGreen()"></div>
                 <div class="clickable simonButton" id="red" onmousedown="clickRed()"></div>
