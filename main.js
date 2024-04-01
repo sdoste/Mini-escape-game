@@ -84,7 +84,7 @@ let cuadroPuesto = true;
 let brokenHandsPut = false;
 function displayPaintingOrMirror(){
     if (cuadroPuesto){
-        playArea.style.backgroundImage = "url(Images/paintingWall.jpg)";
+        playArea.style.backgroundImage = "url(Images/paintingWall.JPG)";
         document.getElementById("esquinaCuadro").style.display = "block";
     } else {
         //espejo
