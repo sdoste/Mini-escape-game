@@ -302,6 +302,7 @@ function despegar(){
         cuadroPuesto = false;
         playArea.style.backgroundImage = "url(Images/MirrorWall.JPG)"
         window.alert("Retiras el papel del cuadro. Debajo hay un espejo.");
+        document.getElementById("esquinaCuadro").style.display = "none";
         displayPaintingOrMirror();
     } else {
         window.alert("El cuadro te parece muy bonito y decides no quitarlo. Tu sabrás.")
@@ -377,24 +378,9 @@ function impresora(){
         hasPage = true;
         printerUsed = true;
         loadAssets();
-    } else (
+    } else{
         window.alert("Está encendida.")
-    )
-
-}
-let phoneNumber = "+2168650823";
-function telefono(){
-    let userTry = prompt("Marca el número al que quieres llamar:");
-    if (userTry == phoneNumber){
-        //numero correcto
-        window.alert("Oyes un click metálico. Parece que se ha abierto algo.");
-        phoneUsed = true;
-        mailBoxOpen = true;
-        loadAssets();
-    } else {
-        window.alert("No pasa nada.");
     }
-
 }
 
 //objects
@@ -447,6 +433,7 @@ function usarObjeto(itemNumber){
         case 'url("Images/hands.GIF")':
         case 'url("Images/handsBroken.GIF")':
         case 'url("Images/smallKey.png")':
+        case 'url("Images/doorKey.png")':
             usandoPilas = false;
             usandoProyector = false;
             if (currentItem.style.backgroundColor == "orange"){
@@ -591,13 +578,122 @@ function closeMenu(){
     
 } 
 
+let phoneNumber = "+2168650823";
+let phoneScreen = "";
+function telefono(){
+    //cerrar menu, deseleccionar items, y seleccionar item
+    itemsDeselect();
+    document.getElementById("menu").style.display = "block";
+    document.getElementById("exitMenu").style.display = "block";
+    document.getElementById("teclas").style.display = "grid";
+    document.getElementById("phoneBackground").style.display = "block";
+    document.getElementById("screen").style.display = "flex";
+    let botones = document.querySelectorAll('.phoneButton');
+    botones.forEach(boton=> {
+        boton.style.display = "block";
+    });
+    phoneScreen = "";
+}
 
-// POZO
-// Caperucita Roja: "Tengo la extraña sensación de que ya no estamos en Fondo de Bikini."
-// Bob Esponja: "¿Qué quieres decir con 'ya no estamos Fondo de Bikini? ¿Dónde estamos?"
-// Caperucita Roja: "¡No lo sé!"
-// Shrek: "Quién eres tú? ¿Y cómo llegaste aquí?"
-// Caperucita Roja: "¡Oh, no tengo ni idea! ¡Solo estaba tratando de volver a casa!"
-// Bob Esponja: "¿Y cómo planeas hacer eso?"
-// Caperucita Roja: "¡Bueno, yendo a por el Hada Azul, por supuesto! Dice que puede ayudarme."
-// Shrek: "¿El Hada Azul? ¡Eso está muy lejos de aquí!"
+function uno(){
+    if (phoneScreen.length == 11){
+        llamar();
+        return;
+    }
+    phoneScreen += "1";
+    document.getElementById("screen").innerHTML = phoneScreen;
+}
+function dos(){
+    if (phoneScreen.length == 11){
+        llamar();
+        return;
+    }
+    phoneScreen += "2";
+    document.getElementById("screen").innerHTML = phoneScreen;
+}
+function tres(){
+    if (phoneScreen.length == 11){
+        llamar();
+        return;
+    }
+    phoneScreen += "3";
+    document.getElementById("screen").innerHTML = phoneScreen;
+}
+function cuatro(){
+    if (phoneScreen.length == 11){
+        llamar();
+        return;
+    }
+    phoneScreen += "4";
+    document.getElementById("screen").innerHTML = phoneScreen;
+}
+function cinco(){
+    if (phoneScreen.length == 11){
+        llamar();
+        return;
+    }
+    phoneScreen += "5";
+    document.getElementById("screen").innerHTML = phoneScreen;
+}
+function seis(){
+    if (phoneScreen.length == 11){
+        llamar();
+        return;
+    }
+    phoneScreen += "6";
+    document.getElementById("screen").innerHTML = phoneScreen;
+}
+function siete(){
+    if (phoneScreen.length == 11){
+        llamar();
+        return;
+    }
+    phoneScreen += "7";
+    document.getElementById("screen").innerHTML = phoneScreen;
+    }
+function ocho(){
+    if (phoneScreen.length == 11){
+        llamar();
+        return;
+    }
+    phoneScreen += "8";
+    document.getElementById("screen").innerHTML = phoneScreen;
+}
+function nueve(){
+    if (phoneScreen.length == 11){
+        llamar();
+        return;
+    }
+    phoneScreen += "9";
+    document.getElementById("screen").innerHTML = phoneScreen;
+}
+function cero(){
+    if (phoneScreen.length == 11){
+        llamar();
+        return;
+    }
+    phoneScreen += "0";
+    document.getElementById("screen").innerHTML = phoneScreen;
+   }
+function mas(){
+    if (phoneScreen.length == 11){
+        llamar();
+        return;
+    }
+    phoneScreen += "+";
+    document.getElementById("screen").innerHTML = phoneScreen;
+}
+function llamar(){
+    if (phoneScreen == phoneNumber){
+            //numero correcto
+            window.alert("Oyes un click metálico. Parece que se ha abierto algo.");
+            phoneUsed = true;
+            mailBoxOpen = true;
+            loadAssets();
+        } else {
+            window.alert("No pasa nada. Debe ser el número incorrecto.");
+            phoneScreen = "";
+            document.getElementById("screen").innerHTML = "";
+        }
+}
+
