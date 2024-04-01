@@ -253,7 +253,7 @@ function reloj(){
                     window.alert("Le vuelves a poner las manecillas al reloj. Más o menos.");
                     clockHands = "broken";
                     displayClockAndProjection();
-                    removeItem('url("Images/handsBroken.gif")');
+                    removeItem('url("Images/handsBroken.GIF")');
                 } else {
                     window.alert("Decides no toquetear el reloj. Pobrecito, sin manecillas.");
                 } 
