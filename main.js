@@ -84,19 +84,19 @@ let cuadroPuesto = true;
 let brokenHandsPut = false;
 function displayPaintingOrMirror(){
     if (cuadroPuesto){
-        playArea.style.backgroundImage = "url(Images/paintingWall.jpg)";
+        playArea.style.backgroundImage = "url(Images/paintingWall.JPG)";
         document.getElementById("esquinaCuadro").style.display = "block";
     } else {
         //espejo
-        playArea.style.backgroundImage = "url(Images/MirrorWall.jpg)";
+        playArea.style.backgroundImage = "url(Images/MirrorWall.JPG)";
         let clockReflection = document.getElementById("reflectedClock");
         clockReflection.style.display = "block";
         switch (clockHands){
             case "normal":
-                clockReflection.style.backgroundImage = "url(Images/reflectionClockNormal.gif)";
+                clockReflection.style.backgroundImage = "url(Images/reflectionClockNormal.GIF)";
             break;
             case "empty":
-                clockReflection.style.backgroundImage = "url(Images/reflectionClockNoHands.gif)";
+                clockReflection.style.backgroundImage = "url(Images/reflectionClockNoHands.GIF)";
             break;
             case "broken":
                 clockReflection.style.backgroundImage = "url(Images/reflectionClockBroken.png)";
@@ -202,8 +202,8 @@ function buzon(){
                 if (userAccepts){
                     window.alert("Consigues coger una llave pequeña, aunque se te ha roto una manecilla.");
                     hasSmallKey = true;
-                    removeItem('url("Images/hands.gif")');
-                    addItem("url(Images/handsBroken.gif)");
+                    removeItem('url("Images/hands.GIF")');
+                    addItem("url(Images/handsBroken.GIF)");
                     addItem("url(Images/smallKey.png)");
                 } else {
                     window.alert("Decides no hacerlo, aunque a estas alturas igual deberías.");
@@ -241,7 +241,7 @@ function reloj(){
                 window.alert("Le quitas las manecillas más largas al reloj.");
                 clockHands = "empty";
                 displayClockAndProjection();
-                addItem("url(Images/hands.gif)");
+                addItem("url(Images/hands.GIF)");
             } else {
                 window.alert("Decides no toquetear el reloj. Cualquiera diría.");
             }
@@ -300,7 +300,7 @@ function despegar(){
     let userResponse = confirm("Una esquina parece estar despegada. ¿Quieres quitarla?");
     if (userResponse){
         cuadroPuesto = false;
-        playArea.style.backgroundImage = "url(Images/MirrorWall.jpg)"
+        playArea.style.backgroundImage = "url(Images/MirrorWall.JPG)"
         window.alert("Retiras el papel del cuadro. Debajo hay un espejo.");
         displayPaintingOrMirror();
     } else {
@@ -444,8 +444,8 @@ function usarObjeto(itemNumber){
                 document.getElementById("page").style.display = "block";  
             }
             break;
-        case 'url("Images/hands.gif")':
-        case 'url("Images/handsBroken.gif")':
+        case 'url("Images/hands.GIF")':
+        case 'url("Images/handsBroken.GIF")':
         case 'url("Images/smallKey.png")':
             usandoPilas = false;
             usandoProyector = false;
