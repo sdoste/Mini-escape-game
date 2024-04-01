@@ -566,8 +566,8 @@ function playSimon(){
 function simonSolve(){
     setTimeout(() => {  document.getElementById("simon").style.backgroundImage = "url(Images/playSimon.png)"; }, 500);
     //comprobación solución a cada click
-    // simonSolution = "redyellowredgreenredyellowredbluegreenblue"
-    simonSolution ="redgreenblueyellow";
+    simonSolution = "redyellowredgreenredyellowredbluegreenblue"
+    // simonSolution ="redgreenblueyellow";
     if (secretSimon == simonSolution){
         window.alert("Suena una melodía y se abre un compartimento en el Simon. Encuentras un par de pilas.")
         closeMenu();
