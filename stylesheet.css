@@ -1,6 +1,5 @@
 body{
-    width: 100vw;
-    height: 100vh;
+    margin-top:150px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -56,14 +55,14 @@ body{
     border-radius: 8px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 40px;
+    margin-top: 80px;
 }
 
 #inventory{
     display: none;
     width: 900px;
     height: 120px;
-     
+    background-color: rgb(238, 222, 201);
     border: solid;
     border-color: darkblue;
     border-radius: 0px 0px 8px 8px;
@@ -134,37 +133,17 @@ body{
   background-repeat: no-repeat;
   background-position: center center;
 }
-/* #lid{
-  display: none;
-  cursor: pointer;
-  flex-shrink: 0;
-  width: 63px;
-  height: 21px;
-  background-color: orange;
-  position: relative;
-  left: 15px;
-  top: 7px;
-}
-#box{
-  display: none;
-  cursor: pointer;
-  width: 40px;
-  height: 40px;
-  background-color: orange;
-  position: relative;
-  left: 293px;
-  bottom: 161px;
-}
 #smallKey{
   display: none;
   cursor: pointer;
-  width: 40px;
-  height: 40px;
-  background-color: orange;
+  width: 24px;
+  height: 20px;
+  /* background-color: orange; */
   position: relative;
-  left: 0px;
-  bottom: 0px;
-} */
+  left: 22px;
+  top: 71px;
+}
+
 #clock{
   display: none;
   cursor: pointer;
@@ -201,6 +180,19 @@ body{
   background-repeat: no-repeat;
   background-position: center center;
 }
+#projection{
+  display: none;
+  cursor: pointer;
+  width: 421px;
+  height: 139px;
+  position: relative;
+  right: 308px;
+  bottom: 216px;
+  background-image: url("Images/projection.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
 
 #esquinaCuadro{
     display: none;
@@ -212,13 +204,38 @@ body{
     left: 617px;
     top: 40px;
 }
+
+#reflectedClock{
+  display: none;
+  width: 80px;
+  height: 80px;
+  position: relative;
+  border-radius: 50px;
+  left: 286px;
+  top: 73px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#reflectedProjection{
+  display: none;
+  width: 259px;
+  height: 157px;
+  position: relative;
+  left: 363px;
+  bottom: 45px;
+  background-image: url(Images/reflectedProjection.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
 /* ESCRITORIO */
 #topDrawer{
     display: none;
     cursor: pointer;
     width: 121px;
     height: 30px;
-    background-color: orange;
+    /* background-color: orange; */
     position: relative;
     left: 232px;
     top: 328px;
@@ -228,7 +245,7 @@ body{
     cursor: pointer;
     width: 121px;
     height: 30px;
-    background-color: orange;
+    /* background-color: orange; */
     position: relative;
     left: 232px;
     top: 331px;
@@ -239,7 +256,7 @@ body{
     cursor: pointer;
     width: 120px;
     height: 60px;
-    background-color: orange;
+    /* background-color: orange; */
     position: relative;
     top: 334px;
     left: 233px;
@@ -251,7 +268,7 @@ body{
     border-radius: 0px 80px 0px 50px;
     width: 118px;
     height: 63px;
-    background-color: orange;
+    /* background-color: orange; */
     position: relative;
     top: 132px;
     left: 297px;
@@ -261,7 +278,7 @@ body{
     cursor: pointer;
     width: 68px;
     height: 29px;
-    background-color: orange;
+    /* background-color: orange; */
     position: relative;
     left: 527px;
     top: 104px;
@@ -271,10 +288,11 @@ body{
     cursor: pointer;
     width: 124px;
     height: 71px;
-    background-color: orange;
+    /* background-color: orange; */
     position: relative;
     left: 518px;
     top: 170px;
+    
   }
 
 

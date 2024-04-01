@@ -14,14 +14,16 @@
             </div>
             <div class="clickable" id="door" onclick="salir()"></div>
             <div class="clickable" id="mailbox" onclick="buzon()">
-                <div class="clickable" id="lid"></div>
-                <div id="clickable" id="box"></div>
-                <div id="clickable" id="smallKey"></div>
+                <div class="clickable" id="smallKey" onclick="getKey()"></div>
             </div>
             <div class="clickable" id="esquinaCuadro" onclick="despegar()"></div>
+            <div class="clickable" id="reflectedClock"></div>
+            <div class="clickable" id="reflectedProjection"></div>
             <div class="clickable" id="clock" onclick="reloj()"></div>
             <div class="clickable" id="pedestal" onclick="pedestal()">
-                <div class="clickable" id="placedProjector" onclick="placeProjector()"></div>
+                <div class="clickable" id="placedProjector" onclick="placeProjector()">
+                    <div class="clickable" id="projection"></div>
+                </div>
             </div>
             <div class="clickable drawer" id="topDrawer" onclick="cajonArriba()"></div>
             <div class="clickable drawer" id="middleDrawer" onclick="cajonMedio()"></div>
