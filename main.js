@@ -573,6 +573,12 @@ function closeMenu(){
     //closing items
     document.getElementById("simon").style.display = "none";
     document.getElementById("page").style.display = "none";
+    document.getElementById("screen").style.display = "none";
+    document.getElementById("phoneBackground").style.display = "none";
+    let botones = document.querySelectorAll('.phoneButton');
+    botones.forEach(boton=> {
+        boton.style.display = "none";
+    });
     secretSimon = "";
     itemsDeselect();
     
